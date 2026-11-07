@@ -34,6 +34,7 @@ jobs:
 
       - name: Project and stats cards
         run: |
+          sudo chown -R "$(id -u):$(id -g)" dist
           pip install --quiet fonttools brotli pillow
           python scripts/refresh.py
         env:
