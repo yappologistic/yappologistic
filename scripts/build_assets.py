@@ -167,7 +167,7 @@ def toolbox(t: str) -> str:
 def footer(t: str) -> str:
     c = THEMES[t]
     H = 260
-    title, sub = "Thanks for stopping by.", "built on CachyOS and Hyprland"
+    title = "Thanks for stopping by."
     # the camellia from the avatar, dithered, behind the text (CUI .home-cta)
     ds = 320
     dx, dy = W / 2 - ds / 2, H / 2 - ds / 2 - 6
@@ -175,16 +175,15 @@ def footer(t: str) -> str:
                   crop=(0.30, 0.16, 0.68, 0.54))
     size, track = 28, -28 * 0.03
     tw = measure("display", title, size, track)
-    ws, _ = words(title, (W - tw) / 2, H / 2 + 8, size, c["fg"], track, 0.2)
-    body = f"""<defs>{style({'display': title, 'mono': sub})}
+    ws, _ = words(title, (W - tw) / 2, H / 2 + 4, size, c["fg"], track, 0.2)
+    body = f"""<defs>{style({'display': title})}
 <radialGradient id="clear"><stop offset=".3" stop-color="{c['bg']}" stop-opacity=".94"/><stop offset="1" stop-color="{c['bg']}" stop-opacity="0"/></radialGradient>
 <clipPath id="f"><rect width="{W}" height="{H}" rx="18"/></clipPath></defs>
 <g clip-path="url(#f)">
 <rect width="{W}" height="{H}" fill="{c['bg']}"/>
 <g class="fadein" opacity=".62">{dots}</g>
-<ellipse cx="{W / 2}" cy="{H / 2 + 4}" rx="250" ry="60" fill="url(#clear)"/>
+<ellipse cx="{W / 2}" cy="{H / 2 - 6}" rx="240" ry="52" fill="url(#clear)"/>
 {ws}
-<text x="{W / 2}" y="{H / 2 + 36}" text-anchor="middle" class="m rise" style="animation-delay:.45s" font-size="12" fill="{c['text3']}">{esc(sub)}</text>
 </g>
 <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="17.5" fill="none" stroke="{c['border']}"/>"""
     return svg(W, H, title, body)
