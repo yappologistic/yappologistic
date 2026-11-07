@@ -35,6 +35,6 @@
 <br><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yappologistic/yappologistic/output/snake-dark.svg"><img src="https://raw.githubusercontent.com/yappologistic/yappologistic/output/snake-light.svg" alt="Contribution graph being eaten by a snake" width="100%"></picture>
 <br><br><br>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg"><img src="assets/footer-light.svg" alt="Thanks for stopping by." width="100%"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg?v=2"><img src="assets/footer-light.svg?v=2" alt="Thanks for stopping by." width="100%"></picture>
 
 </div>
